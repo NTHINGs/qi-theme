@@ -1,10 +1,12 @@
 <?php
 /**
- * Theme Page Section for our theme.
+ * Template Name: Blog Template
  *
- * @package    ThemeGrill
+ * Displays the Blog Template of the theme.
+ *
+ * @package ThemeGrill
  * @subpackage Accelerate
- * @since      Accelerate 1.0
+ * @since Accelerate 1.0
  */
 get_header(); ?>
 
