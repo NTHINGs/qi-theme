@@ -1,26 +1,50 @@
 <?php
 /**
- * The template used for displaying Courses
+ * The template used for displaying page content in page.php
  *
  * @package    ThemeGrill
  * @subpackage Accelerate
  * @since      Accelerate 1.0
  */
-$obj_memberships = Edr_Memberships::get_instance();
-$membership_id = get_the_ID();
-$classes = apply_filters( 'edr_membership_classes', array( 'edr-membership' ) );
 ?>
 
-<article id="membership-<?php the_ID(); ?>" class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
-	<div class="edr-membership__header">
-		<h2 class="edr-membership__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-		<div class="edr-membership__price"><?php echo edr_get_the_membership_price( $membership_id ); ?></div>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php do_action( 'accelerate_before_post_content' ); ?>
+
+	<header class="entry-header">
+		<h2 class="entry-title">
+			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+		</h2>
+	</header>
+
+	<?php
+	if ( 'post' == get_post_type() ) :
+		accelerate_entry_meta();
+	endif;
+	?>
+
+	<?php
+	if ( has_post_thumbnail() ) {
+		$image = '';
+		$title_attribute = get_the_title( $post->ID );
+		$image .= '<figure class="post-featured-image">';
+		$image .= '<a href="' . get_permalink() . '" title="' . the_title_attribute( 'echo=0' ) . '">';
+		$image .= get_the_post_thumbnail( $post->ID, 'featured-blog-large', array(
+				'title' => esc_attr( $title_attribute ),
+				'alt'   => esc_attr( $title_attribute ),
+			) ) . '</a>';
+		$image .= '</figure>';
+		echo $image;
+	}
+	?>
+
+	<div class="entry-content clearfix">
+		<?php
+		global $more;
+		$more = 0;
+		the_content( '<span>' . __( 'Read more', 'accelerate' ) . '</span>' );
+		?>
 	</div>
-	<div class="edr-membership__summary">
-	<?php the_content( '' ); ?>
-	</div>
-	<div class="edr-membership__footer">
-		<a class="edr-membership__more" href="<?php the_permalink(); ?>"><?php _e( 'Read more', 'educator' ); ?></a>
-		<?php echo edr_get_membership_buy_link( $membership_id ); ?>
-	</div>
+
+	<?php do_action( 'accelerate_after_post_content' ); ?>
 </article>
