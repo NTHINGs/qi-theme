@@ -6,6 +6,9 @@
  * @subpackage Accelerate
  * @since      Accelerate 1.0
  */
+$obj_memberships = Edr_Memberships::get_instance();
+$membership_id = get_the_ID();
+$classes = apply_filters( 'edr_membership_classes', array( 'edr-membership' ) );
 ?>
 
 <article id="membership-<?php the_ID(); ?>" class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
