@@ -62,9 +62,6 @@
 							elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
 								_e( 'Links', 'accelerate' );
 
-							elseif ( is_tax( 'post_type', 'edr_course' ) ) :
-								_e( 'Courses', 'accelerate' );
-
 							else :
 								_e( 'Archives', 'accelerate' );
 
