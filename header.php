@@ -40,7 +40,7 @@ wp_head();
 						<?php
 						if( ( accelerate_options( 'accelerate_show_header_logo_text', 'text_only' ) == 'both' || accelerate_options( 'accelerate_show_header_logo_text', 'text_only' ) == 'logo_only' ) ) {
 						?>
-							<div id="header-logo-image w-100">
+							<div id="header-logo-image" class="w-100 text-center">
 								<?php if (accelerate_options( 'accelerate_header_logo_image', '' ) != '') { ?>
 										<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo accelerate_options( 'accelerate_header_logo_image', '' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
 								<?php } ?>
