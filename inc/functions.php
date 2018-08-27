@@ -578,7 +578,7 @@ if ( ! function_exists( 'accelerate_footer_copyright' ) ) :
 
 		$tg_link = '<a href="' . esc_url( 'https://themegrill.com/themes/accelerate' ) . '" target="_blank" title="' . esc_attr__( 'ThemeGrill', 'accelerate' ) . '" rel="author"><span>' . __( 'ThemeGrill', 'accelerate' ) . '</span></a>';
 
-		$default_footer_value = sprintf( __( 'Copyright &copy; %1$s %2$s.', 'accelerate' ), date( 'Y' ), $site_link ) . ' ' . sprintf( __( 'Powered by %s.', 'accelerate' ), $wp_link ) . ' ' . sprintf( __( 'Theme: %1$s by %2$s.', 'accelerate' ), 'Accelerate', $tg_link );
+		$default_footer_value = sprintf( __( 'Copyright &copy; %1$s %2$s.', 'accelerate' ), date( 'Y' ), $site_link ) . ' ' . sprintf( __( 'Powered by %s.', 'accelerate' ), $wp_link ));
 
 		$accelerate_footer_copyright = '<div class="copyright">' . $default_footer_value . '</div>';
 		echo $accelerate_footer_copyright;
