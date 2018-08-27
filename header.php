@@ -36,7 +36,7 @@ wp_head();
 			<div class="inner-wrap">
 
 				<div id="header-text-nav-wrap" class="clearfix">
-					<div id="header-left-section">
+					<div id="header-left-section" class="w-100">
 						<?php
 						if( ( accelerate_options( 'accelerate_show_header_logo_text', 'text_only' ) == 'both' || accelerate_options( 'accelerate_show_header_logo_text', 'text_only' ) == 'logo_only' ) ) {
 						?>
