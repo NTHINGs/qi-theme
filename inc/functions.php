@@ -37,6 +37,7 @@ function accelerate_scripts_styles_method() {
 	/**
 	 * Loads our main stylesheet.
 	 */
+	wp_enqueue_style( 'bootstrap', '//stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css');
 	wp_enqueue_style( 'accelerate_style', get_stylesheet_uri() );
 
 	wp_register_style( 'accelerate_googlefonts', '//fonts.googleapis.com/css?family=Roboto:400,300,100|Roboto+Slab:700,400' );
